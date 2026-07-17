@@ -6,3 +6,7 @@ SUPPORTED_AUDIO_FORMATS = {
     ".m4a",
     ".aac",
 }
+
+TARGET_SAMPLE_RATE = 16000
+
+TRIM_TOP_DB = 20

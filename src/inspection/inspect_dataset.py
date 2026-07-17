@@ -4,7 +4,7 @@ from src.inspection.scanner import scan_dataset
 
 def main():
 
-    dataset = scan_dataset("Data Collection")
+    dataset = scan_dataset("Processed Data")
 
     report = generate_report(dataset)
 
