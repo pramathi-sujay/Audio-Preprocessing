@@ -4,7 +4,7 @@ from src.inspection.scanner import scan_dataset
 
 def main():
 
-    dataset = scan_dataset("Duration Standardized Data")
+    dataset = scan_dataset("Renamed Data")
 
     report = generate_report(dataset)
 
