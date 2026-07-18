@@ -1,12 +1,10 @@
 import csv
-from pathlib import Path
 
 
-def write_metadata(metadata, output_file):
-
-    output_file = Path(output_file)
-
-    output_file.parent.mkdir(parents=True, exist_ok=True)
+def write_metadata(dataframe, output_file):
+    """
+    Writes the metadata dataframe to CSV.
+    """
 
     fieldnames = [
         "filename",
@@ -14,12 +12,17 @@ def write_metadata(metadata, output_file):
         "label",
         "environment",
         "duration (in seconds)",
+        "split",
     ]
 
-    with open(output_file, mode="w", newline="", encoding="utf-8") as csv_file:
+    with open(output_file, "w", newline="", encoding="utf-8") as csvfile:
 
-        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
         writer.writeheader()
 
-        writer.writerows(metadata)
+        writer.writerows(
+            dataframe.to_dict(orient="records")
+        )
+
+    print(f"\nMetadata saved to {output_file}")

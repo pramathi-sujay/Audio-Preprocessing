@@ -1,20 +1,18 @@
-from src.metadata.generator import generate_metadata
-from src.metadata.writer import write_metadata
-
-
-PROCESSED_DATASET = "Renamed Data"
-OUTPUT_FILE = "metadata.csv"
+from .config import DATASET_DIR, OUTPUT_FILE
+from .generator import generate_metadata
+from .splitter import add_dataset_split
+from .writer import write_metadata
 
 
 def main():
 
-    metadata = generate_metadata(PROCESSED_DATASET)
+    metadata = generate_metadata(DATASET_DIR)
 
-    write_metadata(metadata, OUTPUT_FILE)
+    metadata_df = add_dataset_split(metadata)
 
-    print("\n===== METADATA GENERATION COMPLETE =====")
-    print(f"Total Records : {len(metadata)}")
-    print(f"Output File   : {OUTPUT_FILE}")
+    write_metadata(metadata_df, OUTPUT_FILE)
+
+    print("\nMetadata generation completed successfully!")
 
 
 if __name__ == "__main__":
