@@ -9,10 +9,11 @@ def write_metadata(metadata, output_file):
     output_file.parent.mkdir(parents=True, exist_ok=True)
 
     fieldnames = [
+        "filename",
         "filepath",
         "label",
         "environment",
-        "duration",
+        "duration (in seconds)",
     ]
 
     with open(output_file, mode="w", newline="", encoding="utf-8") as csv_file:

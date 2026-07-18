@@ -2,7 +2,7 @@ from src.metadata.generator import generate_metadata
 from src.metadata.writer import write_metadata
 
 
-PROCESSED_DATASET = "Processed Data"
+PROCESSED_DATASET = "Renamed Data"
 OUTPUT_FILE = "metadata.csv"
 
 

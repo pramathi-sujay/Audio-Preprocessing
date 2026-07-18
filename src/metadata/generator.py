@@ -31,10 +31,11 @@ def generate_metadata(dataset_path):
 
         metadata.append(
             {
-                "filepath": str(audio_file),
+                "filename": audio_file.name,
+                "filepath": relative_path.as_posix(),
                 "label": label,
                 "environment": environment,
-                "duration": duration,
+                "duration (in seconds)": duration,
             }
         )
 
