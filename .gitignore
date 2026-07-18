@@ -5,6 +5,8 @@ __pycache__/
 # Dataset
 Data Collection/
 Processed Data/
+Duration Standardized Data/
+metadata.csv
 
 # VS Code
 .vscode/
